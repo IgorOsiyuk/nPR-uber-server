@@ -1,0 +1,27 @@
+{
+  "name": "nuber-server",
+  "version": "1.0.0",
+  "description": "graphql server for test project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd src && nodemon --exec ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorOsiyuk/nPR-uber-server.git"
+  },
+  "author": "Ihar Asiyuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorOsiyuk/nPR-uber-server/issues"
+  },
+  "homepage": "https://github.com/IgorOsiyuk/nPR-uber-server#readme",
+  "dependencies": {
+    "@types/node": "^17.0.8",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.5.4"
+  }
+}
