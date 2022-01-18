@@ -21,6 +21,7 @@
   "homepage": "https://github.com/IgorOsiyuk/nPR-uber-server#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^14.2.0",
     "graphql-tools": "^4.0.8",
     "graphql-yoga": "^1.18.3",
     "helmet": "^5.0.1",

@@ -4,5 +4,5 @@ type SayHelloResponse {
 }
 
 type Query {
-  sayHi: SayHelloResponse!
+    sayHi: SayHelloResponse!
 }

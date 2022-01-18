@@ -13,10 +13,10 @@ const connectionOptions: ConnectionOptions = {
     "entities": [
         "entity/**/*.*"
     ],
-    "host": process.env.DB_ENDPOINT || "localhost",
+    "host": process.env.DB_ENDPOINT,
     "port": 5000,
-    "username":process.env.DB_USERNAME || "ihar",
-    "password":process.env.DB_PASSWORD || "123"
+    "username":process.env.DB_USERNAME,
+    "password":process.env.DB_PASSWORD
 }
 
 export default connectionOptions
