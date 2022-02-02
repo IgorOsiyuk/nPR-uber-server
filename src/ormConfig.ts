@@ -11,7 +11,7 @@ const connectionOptions: ConnectionOptions = {
     // "password": "test",
 
     "entities": [
-        "entity/**/*.*"
+        "entities/**/*.*"
     ],
     "host": process.env.DB_ENDPOINT,
     "port": 5000,

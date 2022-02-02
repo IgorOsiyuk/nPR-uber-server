@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/IgorOsiyuk/nPR-uber-server#readme",
   "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "bcrypt": "^5.0.1",
+    "class-validator": "^0.13.2",
     "cors": "^2.8.5",
     "dotenv": "^14.2.0",
     "graphql-tools": "^4.0.8",
