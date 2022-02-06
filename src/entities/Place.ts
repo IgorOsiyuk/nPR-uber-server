@@ -2,7 +2,7 @@
 import { BaseEntity, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity()
-class Verification extends BaseEntity {
+class Place extends BaseEntity {
   @PrimaryGeneratedColumn() id: number;
 
   @Column({ type: "text" })
@@ -22,4 +22,4 @@ class Verification extends BaseEntity {
 
 }
 
-export default Verification;
+export default Place;
