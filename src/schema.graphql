@@ -1,4 +1,21 @@
-type Verification {
+type Chat {
+  id: Int!
+  messages: [Message]!
+  participants: [User]!
+  createAt: String!
+  updateAt: String
+}
+
+type Message {
+  id: Int!
+  text: String!
+  chat: Chat!
+  user: User!
+  createAt: String!
+  updateAt: String
+}
+
+type Place {
   id: Int!
   name: String!
   lat: Float!
@@ -7,6 +24,9 @@ type Verification {
   isFav: Boolean!
   createAt: String!
   updateAt: String
+}
+
+type Ride {
   id: Int!
   status: String!
   pickUpAddress: String!
@@ -18,13 +38,6 @@ type Verification {
   price: Float!
   distance: String!
   duration: String!
-  createAt: String!
-  updateAt: String
-  id: Int!
-  target: String!
-  payload: String!
-  key: String!
-  used: Boolean!
   createAt: String!
   updateAt: String
 }
@@ -49,8 +62,20 @@ type User {
   lastLng: Float
   lastLat: Float
   lastOrientation: Float
+  messages: [Message]
+  chat: Chat
 }
 
 type Query {
   user: User
+}
+
+type Verification {
+  id: Int!
+  target: String!
+  payload: String!
+  key: String!
+  used: Boolean!
+  createAt: String!
+  updateAt: String
 }
