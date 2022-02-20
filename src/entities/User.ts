@@ -3,7 +3,6 @@ import { IsEmail } from "class-validator"
 import { BaseEntity, BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm"
 import Message from "./Message";
 import Chat from './Chat';
-import Verification from "./Verification";
 import Ride from "./Ride";
 
 const BCRYPT = 10
@@ -62,9 +61,6 @@ class User extends BaseEntity {
 
     @ManyToOne(type => Chat, chat => chat.participants)
     chat: Chat
-
-    @OneToMany(type => Verification, verification => verification.user)
-    verifications: Verification[]
 
     @OneToMany(type => Ride, ride => ride.passenger)
     ridesAsPassenger: Ride[]

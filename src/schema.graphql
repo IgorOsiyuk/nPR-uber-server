@@ -38,8 +38,21 @@ type Ride {
   price: Float!
   distance: String!
   duration: String!
+  driver: User!
+  passenger: User!
   createAt: String!
   updateAt: String
+}
+
+type EmailSignInResponse {
+  ok: Boolean!
+  error: String
+  token: String
+}
+
+type Mutation {
+  EmailSignIn(email: String!, password: String!): EmailSignInResponse!
+  StartPhoneVerification(phoneNumber: String!): StartPhoneVerificationResponse!
 }
 
 type User {
@@ -64,10 +77,17 @@ type User {
   lastOrientation: Float
   messages: [Message]
   chat: Chat
+  ridesAsPassenger: [Ride]
+  ridesAsDriver: [Ride]
 }
 
 type Query {
   user: User
+}
+
+type StartPhoneVerificationResponse {
+  ok: Boolean!
+  error: String
 }
 
 type Verification {
@@ -75,7 +95,6 @@ type Verification {
   target: String!
   payload: String!
   key: String!
-  used: Boolean!
   createAt: String!
   updateAt: String
 }
