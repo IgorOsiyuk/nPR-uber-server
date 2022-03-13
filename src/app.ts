@@ -3,13 +3,20 @@ import { GraphQLServer } from "graphql-yoga"
 import helmet from "helmet";
 import logger from "morgan"
 import schema from "./schema";
+import decodeJWT from './utils/decodeJWT';
+import { NextFunction, Response } from "express"
 
 
 class App {
     public app: GraphQLServer;
     constructor() {
         this.app = new GraphQLServer({
-            schema: schema
+            schema: schema,
+            context: req => {
+                return {
+                    req: req.request
+                }
+            }
         })
         this.middlewares();
     }
@@ -20,6 +27,20 @@ class App {
             contentSecurityPolicy: false,
             crossOriginEmbedderPolicy: false
         }));
+        this.app.express.use(this.jwt)
+    }
+
+    private jwt = (req, res: Response, next: NextFunction) => {
+        const token = req.get("Authorization");
+        if (token) {
+            const user = decodeJWT(token)
+            if (user) {
+                req.user = user
+            } else {
+                req.user = undefined
+            }
+        }
+        next()
     }
 }
 
