@@ -69,6 +69,16 @@ type EmailSignUpResponse {
   token: String
 }
 
+type GetMyProfileResponse {
+  ok: Boolean!
+  error: String
+  user: User
+}
+
+type Query {
+  GetMyProfile: GetMyProfileResponse!
+}
+
 type User {
   id: Int!
   email: String
@@ -93,10 +103,6 @@ type User {
   chat: Chat
   ridesAsPassenger: [Ride]
   ridesAsDriver: [Ride]
-}
-
-type Query {
-  user: User
 }
 
 type StartPhoneVerificationResponse {

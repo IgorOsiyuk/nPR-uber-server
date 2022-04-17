@@ -23,7 +23,3 @@ type User {
   ridesAsPassenger: [Ride]
   ridesAsDriver: [Ride]
 }
-
-type Query {
-  user: User
-}
