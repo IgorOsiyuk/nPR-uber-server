@@ -44,17 +44,24 @@ type Ride {
   updateAt: String
 }
 
+type CompleteEmailVerificationResponse {
+  ok: Boolean!
+  error: String
+}
+
+type Mutation {
+  CompleteEmailVerification(key: String!): CompleteEmailVerificationResponse!
+  CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!
+  EmailSignIn(email: String!, password: String!): EmailSignInResponse!
+  EmailSignUp(firstName: String!, lastName: String!, email: String!, password: String!, profilePhoto: String!, age: Int!, phoneNumber: String!): EmailSignUpResponse!
+  RequestEmailVerification: RequestEmailVerificationResponse!
+  StartPhoneVerification(phoneNumber: String!): StartPhoneVerificationResponse!
+}
+
 type CompletePhoneVerificationResponse {
   ok: Boolean!
   error: String
   token: String
-}
-
-type Mutation {
-  CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!
-  EmailSignIn(email: String!, password: String!): EmailSignInResponse!
-  EmailSignUp(firstName: String!, lastName: String!, email: String!, password: String!, profilePhoto: String!, age: Int!, phoneNumber: String!): EmailSignUpResponse!
-  StartPhoneVerification(phoneNumber: String!): StartPhoneVerificationResponse!
 }
 
 type EmailSignInResponse {
@@ -77,6 +84,11 @@ type GetMyProfileResponse {
 
 type Query {
   GetMyProfile: GetMyProfileResponse!
+}
+
+type RequestEmailVerificationResponse {
+  ok: Boolean!
+  error: String
 }
 
 type User {
